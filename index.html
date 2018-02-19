@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+<div class="container-fluid">
+
+  <!-- SELECCIÓN DE START GAME -->
+  <div class="pick-category">
+    <div class="col-12">
+
+      <div class="row text-center">
+        <p class="col-12">
+          <span>Welcome</span>
+        </p>
+        <button class="btn" id="start">Start Game</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SELECCIÓN DE CATEGORÍA -->
+  <div class="pick-category">
+    <div class="col-12">
+
+      <div class="row text-center">
+        <p class="col-12">
+          <span>Selecciona tu categoría</span>
+        </p>
+        
+        <ul id="categories" class="col-12">
+          <li class="all">Categoría</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SELECCIÓN DE DIFICULTAD -->
+  <div class="pick-difficulty">
+    <div class="col-12">
+
+      <div class="row text-center">
+        <p class="col-12">
+          <span>Selecciona la dificultad</span>
+        </p>
+        
+        <ul id="difficulty" class="col-12">
+          <li class="all">All</li>
+          <li id="easy">Easy</li>
+          <li id="medium">Medium</li>
+          <li id="hard">Hard</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SELECCIÓN DE TIPO DE JUEGO -->
+  <div class="pick-type">
+    <div class="col-12">
+
+      <div class="row text-center">
+        <p class="col-12">
+          <span>Selecciona el tipo de juego</span>
+        </p>
+        
+        <ul id="type" class="col-12">
+          <li class="all">All</li>
+          <li id="boolean">True/False</li>
+          <li id="multiple">Multiple Options</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE PREGUNTAS Y RESPESTAS -->
+  <div class="questions-container row">
+    <div class="col-12">
+
+      <div class="row info">
+        <ul class="col-12">
+          <li id="difficulty" class="float-left">dificultad</li>
+          <li id="category" class="float-right">categoría</li>
+        </ul>
+      </div>
+
+      <div class="row game text-center">
+        <p class="col-12">
+          <span id="question">Pregunta</span>
+        </p>
+        
+        <ul id="answers-container" class="col-12">
+          <li>Respuesta</li>
+          <li>Respuesta</li>
+          <li>Respuesta</li>
+          <li>Respuesta</li>
+        </ul>
+        <div id="btn-container">
+          <button id="0" class="btn float-right">Next</button>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+</div> <!-- fin container fluid -->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

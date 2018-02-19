@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+}
+
+li {
+  border: 1px solid black;
+}
+
+.questions-container {
+  padding: 20px;
+}
+
+#answers-container li, #categories li {
+  margin-bottom: 10px;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
