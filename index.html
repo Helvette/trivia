@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trivia</title>
+  <title>Sphynx - Trivia Game</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <!-- viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon2.png" sizes="16x16"/>
 </head>
 <body>
+  <!-- NAV SUPERIOR -->
   <div class="up-nav col-12">
     <p class="toUp text-center">
       
@@ -16,47 +19,39 @@
     </p>
   </div>
 <div class="container-fluid">
-
   <!-- SELECCIÓN DE START GAME -->
   <div class="start-category section">
     <div class="col-12">
-
       <div class="row text-center">
         <p class="col-12">
           <img src="assets/img/mini-logo.png" alt="Sphynx">
         </p>
         <button class="btn start toUp start" id="start">Start Game</button>
       </div>
-
     </div>
   </div>
 
   <!-- SELECCIÓN DE CATEGORÍA -->
   <div class="pick-category section">
     <div class="col-12">
-
       <div class="row text-center">
         <p class="col-12">
           <span class="toUp">Choose your category!</span>
         </p>
-        
         <ul id="categories" class="col-12">
           <li class="all">Categoría</li>
         </ul>
       </div>
-
     </div>
   </div>
 
   <!-- SELECCIÓN DE DIFICULTAD -->
   <div class="pick-difficulty section">
     <div class="col-12">
-
       <div class="row text-center">
         <p class="col-12">
           <span class="toUp">Choose your difficulty!</span>
         </p>
-        
         <ul id="difficulty" class="col-12">
           <li class="all toUp">All</li>
           <li id="easy" class="toUp">Easy</li>
@@ -64,47 +59,39 @@
           <li id="hard" class="toUp">Hard</li>
         </ul>
       </div>
-
     </div>
   </div>
 
   <!-- SELECCIÓN DE TIPO DE JUEGO -->
   <div class="pick-type section">
     <div class="col-12">
-
       <div class="row text-center">
         <p class="col-12">
           <span class="toUp">Choose what type of game you prefer!</span>
         </p>
-        
         <ul id="type" class="col-12">
           <li class="all">All</li>
           <li id="boolean">True/False</li>
           <li id="multiple">Multiple Options</li>
         </ul>
       </div>
-
     </div>
   </div>
 
   <!-- SECCIÓN DE PREGUNTAS Y RESPESTAS -->
   <div class="questions-container row section">
     <div class="col-12">
-
       <div class="row info">
         <ul class="col-12 vertical-align">
           <li id="dificultad" class="float-left col-2">dificultad</li>
           <li id="category" class="float-right col-10 toUp">categoría</li>
         </ul>
       </div>
-
       <hr>
-
       <div class="row game text-center">
         <p class="col-12">
           <span id="question">Pregunta</span>
         </p>
-        
         <ul id="answers-container" class="col-12">
           <li>Respuesta</li>
           <li>Respuesta</li>
@@ -114,12 +101,10 @@
         <div id="btn-container" class="col-12">
           <button id="0" class="btn float-right">Next</button>
         </div>
-        
       </div>
-
     </div>
   </div>
-
+  <!-- SECCIÓN RESULTADOS -->
   <div class="results-container section text-center">
     <h3 class="toUp">Results!</h3>
     <p id="results">resultados</p>
@@ -127,6 +112,7 @@
     <button class="btn start">Play Again</button>
   </div>
 
+  <!-- SECCIÓN ABOUT -->
   <div class="about section">
     <h3 class="toUp">About</h3>
     <ul>
@@ -138,6 +124,8 @@
   </div>
 
 </div> <!-- fin container fluid -->
+
+<!-- NAV INFERIOR -->
 <div class="nav text-center">
   <ul>
     <li class="col-4 nav-start"><span class="toUp">Home</span><i class="fab fa-fort-awesome-alt fa-2x"></i></li>
