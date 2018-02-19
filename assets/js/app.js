@@ -52,18 +52,14 @@ $('.nav-about').click(function() {
       .then(function(response) {
         return response.json();
       }).then(function(data) {
-        console.log(data);
         let categories = data.trivia_categories;
         // enlistando categorías en el html
         $('#categories').append(`<li class="all">All</li>`);
         categories.forEach(function(element){
-          //console.log(element);
           $('#categories').append(`<li id="${element.id}">${element.name}</li>`)
         })
       })
       // DEFINIENDO LA URL PARA HACER LA LLAMADA PARA LA PARTIDA ACTUAL A GUSTO DEL JUGADOR
-    
-    console.log(url);
     /**
      * click a una categoría
      */
@@ -75,7 +71,6 @@ $('.nav-about').click(function() {
       } else {
         url = `${url}&category=${$(this).attr('id')}`;
       }
-      console.log(url);
       $('.start-category').hide();
       $('.pick-category').hide();
       $('.pick-difficulty').show();
@@ -90,11 +85,9 @@ $('.nav-about').click(function() {
       event.stopImmediatePropagation();
       //event.stopPropagation();
       if($(this).hasClass('all')) {
-        //url = url;
-        console.log(url);
+        url = url;
       } else {
         url = `${url}&difficulty=${$(this).attr('id')}`;
-        console.log(url);
       }
       
       $('.start-category').hide();
@@ -111,10 +104,8 @@ $('.nav-about').click(function() {
       event.stopImmediatePropagation();
       if($(this).hasClass('all')) {
         //url = url;
-        console.log(url);
       } else {
         url = `${url}&type=${$(this).attr('id')}`;
-        console.log(url);
       }
       $('#btn-container button').attr('id', '0');
       // llamando las preguntas de la partida -API- y un index 0 para insertar al DOM la primera
@@ -138,7 +129,6 @@ $('.nav-about').click(function() {
     }).then(function(data){
       var correct = 0;
       var wrong = 0;
-      console.log(data)
       //return data;
       let questions = data.results;
       gameInfo = questions;
@@ -149,10 +139,7 @@ $('.nav-about').click(function() {
       $('#btn-container button').click(function(event) {
         event.stopImmediatePropagation();
         let actualID = $(this).attr('id');
-        console.log(actualID);
         if (actualID > 4) {
-
-          console.log('fin!');
           //mostrar resultados *******
           $('#answers-container').empty();
           $('#question').empty();
@@ -176,18 +163,19 @@ $('.nav-about').click(function() {
       $('#answers-container').on('click', '.clickeable', function(event) {
         event.stopImmediatePropagation();
         let content = $(this).html();
+        if (content.indexOf('\'') !== -1) {
+          let index = content.indexOf('\'');
+          content[index] = '&‌#039';
+        }
         let questionID = $('#question').attr('class');
         let correctAnswer;
         correctAnswer = gameInfo[questionID].correct_answer;
-        console.log(questionID)
-        console.log(correctAnswer);
         // si la respuesta es correcta
         if (content === correctAnswer) {
           $(this).addClass('correct');
           correct = correct + 1;
         // si la respuesta es incorrecta
         } else {
-          console.log('no es correcta!')
           $(this).addClass('wrong');
           let list = $('#answers-container li');
           for (let i = 0; i < list.length; i++) {
@@ -209,7 +197,6 @@ $('.nav-about').click(function() {
   const questionToDOM = function(questionElement) {
     $('#btn-container button').attr('disabled', 'disabled');
     let id = $('#btn-container button').attr('id');
-    console.log(id)
     $('#question').removeAttr('class');
     $('#question').addClass(id);
     id = parseInt(id) + 1;
@@ -230,27 +217,20 @@ $('.nav-about').click(function() {
     let question = questionElement.question;
     let answers = questionElement.incorrect_answers;
     answers.push(questionElement.correct_answer);
-    console.log(answers);
     answers.sort(function() {return Math.random() - 0.5});
-    console.log(answers);
     if (type === 'multiple') {
-      console.log('es multiple')
       $('#question').html(question);
       $('#category').html(category);
       $('#dificultad').html(difficulty);
-      console.log(difficulty);
       //$('#answers-container').append('')
       answers.forEach(function(element) {
-        console.log(element);
         $('#answers-container').append(`<li class="clickeable">${element}</li>`);
       })
     } else {
       $('#question').html(question);
       answers.forEach(function(element) {
-        console.log(element);
         $('#answers-container').append(`<li class="clickeable">${element}</li>`);
       })
-      console.log('es true false')
     }
   }
 

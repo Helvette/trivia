@@ -1,64 +1,66 @@
 body {
   background-color: #22455e;
 }
+
 ul {
   list-style: none;
 }
 
-li {
-  border: 1px solid black;
+.toUp {
+  text-transform: uppercase;
 }
 
-.questions-container {
-  padding: 20px;
+.bold {
+  font-weight: bold;
 }
 
-#answers-container li, #categories li, .pick-difficulty li, .pick-type li {
-  margin-bottom: 10px;
-}
-
-
-.nav {
-  background-color: #FFFCF9;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.nav ul {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.nav li {
-  border: none;
-  float: left;
-  padding: 3px 5px;
-  color: #22455e;
-  cursor: pointer;
-}
-
-.nav li:hover {
+a {
   color: #E9736E;
 }
 
-.nav li span {
-  font-size: 10px;
-}
+ /* nav superior */
+ .nav {
+   background-color: #FFFCF9;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+ }
 
-.nav li span {
-  display: block;
-}
+ .nav ul {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+ }
+
+ .nav li {
+   border: none;
+   float: left;
+   padding: 3px 5px;
+   color: #22455e;
+   cursor: pointer;
+ }
+
+ .nav li:hover {
+   color: #E9736E;
+ }
+
+ .nav li span {
+   font-size: 10px;
+ }
+
+ .nav li span {
+   display: block;
+ }
 
 .section {
   padding: 70px 0;
   min-height: 100vh;
 }
 
-.toUp {
-  text-transform: uppercase;
+#answers-container li, #categories li, .pick-difficulty li, .pick-type li {
+  margin-bottom: 10px;
 }
+
 
 .up-nav {
   position: fixed;
@@ -237,10 +239,6 @@ hr {
 
 #results {
   padding: 40px 0;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .about ul {
