@@ -20,6 +20,7 @@ $('.nav').hide();
     $('.pick-type').hide();
     $('.questions-container').hide();
     $('.results-container').hide();
+    $('#categories').empty();
 
 
     let gameInfo;
@@ -96,7 +97,7 @@ $('.nav').hide();
       }
       $('#btn-container button').attr('id', '0');
       // llamando las preguntas de la partida -API- y un index 0 para insertar al DOM la primera
-      settingsDone(url, 0);
+      settingsDone(url);
       $('.start-category').hide();
       $('.pick-category').hide();
       $('.pick-difficulty').hide();
@@ -109,19 +110,18 @@ $('.nav').hide();
   /**
    * función llamada API a preguntas
    */
-  const settingsDone = function(url, index) {
-    let correct = 0;
-    let wrong = 0;
-
+  const settingsDone = function(url) {
     fetch(`https://opentdb.com/api.php?${url}`)
     .then(function(response){
       return response.json();
     }).then(function(data){
+      var correct = 0;
+      var wrong = 0;
       console.log(data)
       //return data;
       let questions = data.results;
       gameInfo = questions;
-      questionToDOM(questions[index]);
+      questionToDOM(questions[0]);
       /**
        * evento click a NEXT pregunta
        */
@@ -130,6 +130,7 @@ $('.nav').hide();
         let actualID = $(this).attr('id');
         console.log(actualID);
         if (actualID > 4) {
+
           console.log('fin!');
           //mostrar resultados *******
           $('#answers-container').empty();
@@ -142,6 +143,8 @@ $('.nav').hide();
           $('.results-container').show();
 
           $('#results').html(`You got ${correct}/${correct + wrong}</li>`)
+          correct = 0;
+          wrong = 0;
         } else {
           questionToDOM(gameInfo[actualID]);
         }
