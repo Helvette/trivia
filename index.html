@@ -23,9 +23,9 @@
 
       <div class="row text-center">
         <p class="col-12">
-          <img src="assets/logo/mini-logo.png" alt="Sphynx">
+          <img src="assets/img/mini-logo.png" alt="Sphynx">
         </p>
-        <button class="btn start toUp" id="start">Start Game</button>
+        <button class="btn start toUp start" id="start">Start Game</button>
       </div>
 
     </div>
@@ -92,11 +92,13 @@
     <div class="col-12">
 
       <div class="row info">
-        <ul class="col-12">
-          <li id="dificultad" class="float-left">dificultad</li>
-          <li id="category" class="float-right">categoría</li>
+        <ul class="col-12 vertical-align">
+          <li id="dificultad" class="float-left col-2">dificultad</li>
+          <li id="category" class="float-right col-10 toUp">categoría</li>
         </ul>
       </div>
+
+      <hr>
 
       <div class="row game text-center">
         <p class="col-12">
@@ -109,7 +111,7 @@
           <li>Respuesta</li>
           <li>Respuesta</li>
         </ul>
-        <div id="btn-container">
+        <div id="btn-container" class="col-12">
           <button id="0" class="btn float-right">Next</button>
         </div>
         
@@ -118,17 +120,28 @@
     </div>
   </div>
 
-  <div class="results-container section">
-    <h3>Results!</h3>
+  <div class="results-container section text-center">
+    <h3 class="toUp">Results!</h3>
     <p id="results">resultados</p>
+    <p><img src="assets/img/brainie.png" alt="Brainie"></p>
     <button class="btn start">Play Again</button>
+  </div>
+
+  <div class="about section">
+    <h3 class="toUp">About</h3>
+    <ul>
+      <li><span class="bold">App Name:</span> Sphynx</li>
+      <li><span class="bold">Version:</span> 1.0</li>
+      <li><span class="bold">Description:</span> Quick Trivia Game</li>
+      <li><span class="bold">Created By:</span> <a href="https//github.com/Helvette">@Helvette</a> & <a href="https//github.com/malditoprotozoo">@Tori</a></li>
+    </ul>
   </div>
 
 </div> <!-- fin container fluid -->
 <div class="nav text-center">
   <ul>
-    <li class="col-4"><span class="toUp">Home</span><i class="fab fa-fort-awesome-alt fa-2x"></i></li>
-    <li class="col-4"><span class="toUp">About</span> <i class="fas fa-cogs fa-2x"></i></li>
+    <li class="col-4 nav-start"><span class="toUp">Home</span><i class="fab fa-fort-awesome-alt fa-2x"></i></li>
+    <li class="col-4 nav-about"><span class="toUp">About</span> <i class="fas fa-cogs fa-2x"></i></li>
     <li class="col-4"><span class="toUp">Settings</span> <i class="fas fa-info-circle fa-2x"></i></li>
   </ul>
 </div>

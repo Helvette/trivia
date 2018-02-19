@@ -17,13 +17,6 @@ li {
   margin-bottom: 10px;
 }
 
-.correct {
-  background-color: green;
-}
-
-.wrong {
-  background-color: red;
-}
 
 .nav {
   background-color: #FFFCF9;
@@ -43,6 +36,11 @@ li {
   float: left;
   padding: 3px 5px;
   color: #22455e;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  color: #E9736E;
 }
 
 .nav li span {
@@ -91,7 +89,7 @@ li {
   max-width: 100%;
 }
 
-#start {
+.start-category .start, .questions-container button, .results-container .start {
   width: 100%;
   margin-top: 35px;
   background-color: #E9736E;
@@ -99,7 +97,11 @@ li {
   font-weight: bold;
 }
 
-#start:hover {
+#btn-container {
+  width: 100%;
+}
+
+.start-category .start:hover, .questions-container button:hover, .results-container .start:hover {
   background-color: #FFFCF9;
   color:  #E9736E;
 }
@@ -130,4 +132,134 @@ li {
 .pick-category li:hover, .pick-difficulty li:hover, .pick-type li:hover {
   background-color: #FFFCF9;
   color: #E9736E;
+}
+
+.info ul {
+  margin: 0;
+  height: 50px;
+}
+
+.info {
+  margin-bottom: 25px;
+}
+
+.info li {
+  color: #FFFCF9;
+  font-weight: 600;
+  border: none;
+}
+
+
+.easy {
+  color: #86BA90;
+
+  padding-bottom: 0;
+}
+
+.medium {
+  color: #C7CA71;
+
+  padding-bottom: 0;
+}
+
+.hard {
+  color: #C86E6E;
+
+  padding-bottom: 0;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+#answers-container li {
+  background-color: #FFFCF9;
+  color: #E9736E;
+  font-weight: 600;
+  padding: 5px 2px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#answers-container li:hover {
+  background-color: #E9736E;
+  color: #FFFCF9;
+}
+
+#answers-container li:not(.clickeable):hover {
+  background-color: #FFFCF9;
+  color: #E9736E;
+}
+
+#question {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FFFCF9;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+
+hr {
+  height: 6px;
+  background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+}
+
+
+#answers-container .correct {
+  background-color: #86BA90;
+  color: #FFFCF9;
+}
+
+#answers-container .wrong {
+  background-color: #C86E6E;
+  color: #FFFCF9;
+}
+
+#answers-container li.correct:hover {
+  background-color: #86BA90;
+  color: #FFFCF9;
+}
+
+#answers-container li.wrong:hover {
+  background-color: #C86E6E;
+  color: #FFFCF9;
+}
+
+
+.results-container {
+  color: #FFFCF9;
+}
+
+#results {
+  padding: 40px 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.about ul {
+  margin: 0;
+  padding: 0;
+}
+
+.about li {
+  margin-bottom: 10px;
+  background-color: #415B6C;
+  color: #FFFCF9;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+}
+
+.about h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+  color: #FFFCF9;
 }

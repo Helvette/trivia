@@ -1,12 +1,32 @@
 
 
-//$('.start-category').show();
-//$('.pick-category').hide();
-//$('.pick-difficulty').hide();
-//$('.pick-type').hide();
-//$('.questions-container').hide();
-//$('.results-container').hide();
-//$('.nav').hide();
+$('.start-category').show();
+$('.pick-category').hide();
+$('.pick-difficulty').hide();
+$('.pick-type').hide();
+$('.questions-container').hide();
+$('.results-container').hide();
+$('.about').hide()
+
+$('.nav-start').click(function() {
+  $('.start-category').show();
+  $('.pick-category').hide();
+  $('.pick-difficulty').hide();
+  $('.pick-type').hide();
+  $('.questions-container').hide();
+  $('.results-container').hide();
+  $('.about').hide()
+})
+
+$('.nav-about').click(function() {
+  $('.start-category').hide();
+  $('.pick-category').hide();
+  $('.pick-difficulty').hide();
+  $('.pick-type').hide();
+  $('.questions-container').hide();
+  $('.results-container').hide();
+  $('.about').show()
+})
 
 /**
  * función de EMPEZAR JUEGO
@@ -35,6 +55,7 @@
         console.log(data);
         let categories = data.trivia_categories;
         // enlistando categorías en el html
+        $('#categories').append(`<li class="all">All</li>`);
         categories.forEach(function(element){
           //console.log(element);
           $('#categories').append(`<li id="${element.id}">${element.name}</li>`)
@@ -50,7 +71,7 @@
       event.stopImmediatePropagation();
       url = 'amount=05';
       if($(this).hasClass('all')) {
-        //url = url;
+        url = url;
       } else {
         url = `${url}&category=${$(this).attr('id')}`;
       }
