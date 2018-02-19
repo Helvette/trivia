@@ -9,30 +9,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  
+  <div class="up-nav col-12">
+    <p class="toUp text-center">
+      
+      <span>Sphynx</span>
+    </p>
+  </div>
 <div class="container-fluid">
 
   <!-- SELECCIÓN DE START GAME -->
-  <div class="start-category">
+  <div class="start-category section">
     <div class="col-12">
 
       <div class="row text-center">
         <p class="col-12">
-          <span>Welcome</span>
+          <img src="assets/logo/mini-logo.png" alt="Sphynx">
         </p>
-        <button class="btn start" id="start">Start Game</button>
+        <button class="btn start toUp" id="start">Start Game</button>
       </div>
 
     </div>
   </div>
 
   <!-- SELECCIÓN DE CATEGORÍA -->
-  <div class="pick-category">
+  <div class="pick-category section">
     <div class="col-12">
 
       <div class="row text-center">
         <p class="col-12">
-          <span>Selecciona tu categoría</span>
+          <span class="toUp">Choose your category!</span>
         </p>
         
         <ul id="categories" class="col-12">
@@ -44,19 +49,19 @@
   </div>
 
   <!-- SELECCIÓN DE DIFICULTAD -->
-  <div class="pick-difficulty">
+  <div class="pick-difficulty section">
     <div class="col-12">
 
       <div class="row text-center">
         <p class="col-12">
-          <span>Selecciona la dificultad</span>
+          <span class="toUp">Choose your difficulty!</span>
         </p>
         
         <ul id="difficulty" class="col-12">
-          <li class="all">All</li>
-          <li id="easy">Easy</li>
-          <li id="medium">Medium</li>
-          <li id="hard">Hard</li>
+          <li class="all toUp">All</li>
+          <li id="easy" class="toUp">Easy</li>
+          <li id="medium" class="toUp">Medium</li>
+          <li id="hard" class="toUp">Hard</li>
         </ul>
       </div>
 
@@ -64,12 +69,12 @@
   </div>
 
   <!-- SELECCIÓN DE TIPO DE JUEGO -->
-  <div class="pick-type">
+  <div class="pick-type section">
     <div class="col-12">
 
       <div class="row text-center">
         <p class="col-12">
-          <span>Selecciona el tipo de juego</span>
+          <span class="toUp">Choose what type of game you prefer!</span>
         </p>
         
         <ul id="type" class="col-12">
@@ -83,12 +88,12 @@
   </div>
 
   <!-- SECCIÓN DE PREGUNTAS Y RESPESTAS -->
-  <div class="questions-container row">
+  <div class="questions-container row section">
     <div class="col-12">
 
       <div class="row info">
         <ul class="col-12">
-          <li id="difficulty" class="float-left">dificultad</li>
+          <li id="dificultad" class="float-left">dificultad</li>
           <li id="category" class="float-right">categoría</li>
         </ul>
       </div>
@@ -113,22 +118,26 @@
     </div>
   </div>
 
-  <div class="results-container">
+  <div class="results-container section">
     <h3>Results!</h3>
     <p id="results">resultados</p>
     <button class="btn start">Play Again</button>
   </div>
 
 </div> <!-- fin container fluid -->
-<div class="nav">
+<div class="nav text-center">
   <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Settings</li>
+    <li class="col-4"><span class="toUp">Home</span><i class="fab fa-fort-awesome-alt fa-2x"></i></li>
+    <li class="col-4"><span class="toUp">About</span> <i class="fas fa-cogs fa-2x"></i></li>
+    <li class="col-4"><span class="toUp">Settings</span> <i class="fas fa-info-circle fa-2x"></i></li>
   </ul>
 </div>
 
+  <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- nuestros scripts -->
   <script src="assets/js/app.js"></script>
+  <!-- fontawesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 </body>
 </html>

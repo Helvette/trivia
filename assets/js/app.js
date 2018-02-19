@@ -1,12 +1,12 @@
 
 
-$('.start-category').show();
-$('.pick-category').hide();
-$('.pick-difficulty').hide();
-$('.pick-type').hide();
-$('.questions-container').hide();
-$('.results-container').hide();
-$('.nav').hide();
+//$('.start-category').show();
+//$('.pick-category').hide();
+//$('.pick-difficulty').hide();
+//$('.pick-type').hide();
+//$('.questions-container').hide();
+//$('.results-container').hide();
+//$('.nav').hide();
 
 /**
  * función de EMPEZAR JUEGO
@@ -196,6 +196,15 @@ $('.nav').hide();
     $('#answers-container').empty();
     let category = questionElement.category;
     let difficulty = questionElement.difficulty;
+    if (difficulty == 'easy') {
+      difficulty = '<i class="fas fa-thermometer-empty fa-2x easy"></i>';
+    }
+    if (difficulty == 'medium') {
+      difficulty = '<i class="fas fa-thermometer-half fa-2x medium"></i>';
+    }
+    if(difficulty == 'hard') {
+      difficulty = '<i class="fas fa-thermometer-full fa-2x hard"></i>';
+    }
     let type = questionElement.type;
     let question = questionElement.question;
     let answers = questionElement.incorrect_answers;
@@ -206,6 +215,9 @@ $('.nav').hide();
     if (type === 'multiple') {
       console.log('es multiple')
       $('#question').html(question);
+      $('#category').html(category);
+      $('#dificultad').html(difficulty);
+      console.log(difficulty);
       //$('#answers-container').append('')
       answers.forEach(function(element) {
         console.log(element);

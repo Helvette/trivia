@@ -1,3 +1,6 @@
+body {
+  background-color: #22455e;
+}
 ul {
   list-style: none;
 }
@@ -10,7 +13,7 @@ li {
   padding: 20px;
 }
 
-#answers-container li, #categories li {
+#answers-container li, #categories li, .pick-difficulty li, .pick-type li {
   margin-bottom: 10px;
 }
 
@@ -20,4 +23,111 @@ li {
 
 .wrong {
   background-color: red;
+}
+
+.nav {
+  background-color: #FFFCF9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav li {
+  border: none;
+  float: left;
+  padding: 3px 5px;
+  color: #22455e;
+}
+
+.nav li span {
+  font-size: 10px;
+}
+
+.nav li span {
+  display: block;
+}
+
+.section {
+  padding: 70px 0;
+  min-height: 100vh;
+}
+
+.toUp {
+  text-transform: uppercase;
+}
+
+.up-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #E9736E;
+  height: 50px;
+  width: 100%;
+  z-index: 100;
+}
+
+.up-nav p {
+  color: #22455e;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+}
+
+.up-nav img {
+  height: 100%;
+  width: auto;
+}
+
+.start-category img {
+  margin-top: 50px;
+  max-width: 100%;
+}
+
+#start {
+  width: 100%;
+  margin-top: 35px;
+  background-color: #E9736E;
+  color: #FFFCF9;
+  font-weight: bold;
+}
+
+#start:hover {
+  background-color: #FFFCF9;
+  color:  #E9736E;
+}
+
+#categories {
+  padding: 0;
+}
+
+
+.pick-category span, .pick-difficulty span, .pick-type span {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: #FFFCF9;
+  font-weight: bold;
+}
+
+.pick-category li, .pick-difficulty li, .pick-type li {
+  border: none;
+  border-radius: 3px;
+  background-color: #E9736E;
+  color: #FFFCF9;
+  text-transform: uppercase;
+  padding: 5px 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pick-category li:hover, .pick-difficulty li:hover, .pick-type li:hover {
+  background-color: #FFFCF9;
+  color: #E9736E;
 }
