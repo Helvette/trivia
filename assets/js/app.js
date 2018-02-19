@@ -58,6 +58,8 @@ $('.nav-about').click(function() {
         categories.forEach(function(element){
           $('#categories').append(`<li id="${element.id}">${element.name}</li>`)
         })
+      }).catch(function(error) {
+        alert(`We're sorry! The server is down. Try again later, please. :(`)
       })
       // DEFINIENDO LA URL PARA HACER LA LLAMADA PARA LA PARTIDA ACTUAL A GUSTO DEL JUGADOR
     /**
@@ -188,6 +190,8 @@ $('.nav-about').click(function() {
         $('#answers-container li').removeClass('clickeable');
         $('#btn-container button').removeAttr('disabled');
       })
+    }).catch(function(error) {
+        alert(`We're sorry! We don't find any questions. Try again, please :(`)
     })
   }
 
@@ -228,6 +232,9 @@ $('.nav-about').click(function() {
       })
     } else {
       $('#question').html(question);
+      $('#question').html(question);
+      $('#category').html(category);
+      $('#dificultad').html(difficulty);
       answers.forEach(function(element) {
         $('#answers-container').append(`<li class="clickeable">${element}</li>`);
       })
