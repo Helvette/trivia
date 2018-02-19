@@ -1,9 +1,27 @@
 
+
+$('.start-category').show();
+$('.pick-category').hide();
+$('.pick-difficulty').hide();
+$('.pick-type').hide();
+$('.questions-container').hide();
+$('.results-container').hide();
+$('.nav').hide();
+
 /**
  * función de EMPEZAR JUEGO
  */
-  $('#start').click(function(event){
+  $('.start').click(function(event){
     event.stopImmediatePropagation();
+    //escondiendo y mostrando secciones
+    $('.start-category').hide();
+    $('.pick-category').show();
+    $('.pick-difficulty').hide();
+    $('.pick-type').hide();
+    $('.questions-container').hide();
+    $('.results-container').hide();
+
+
     let gameInfo;
     var url = 'amount=05';
     /**
@@ -36,7 +54,12 @@
         url = `${url}&category=${$(this).attr('id')}`;
       }
       console.log(url);
-
+      $('.start-category').hide();
+      $('.pick-category').hide();
+      $('.pick-difficulty').show();
+      $('.pick-type').hide();
+      $('.questions-container').hide();
+      $('.results-container').hide();
     })
     /**
      * click a una dificultad
@@ -52,7 +75,12 @@
         console.log(url);
       }
       
-
+      $('.start-category').hide();
+      $('.pick-category').hide();
+      $('.pick-difficulty').hide();
+      $('.pick-type').show();
+      $('.questions-container').hide();
+      $('.results-container').hide();
     });
     /**
      * click a un tipo de juego
@@ -69,6 +97,12 @@
       $('#btn-container button').attr('id', '0');
       // llamando las preguntas de la partida -API- y un index 0 para insertar al DOM la primera
       settingsDone(url, 0);
+      $('.start-category').hide();
+      $('.pick-category').hide();
+      $('.pick-difficulty').hide();
+      $('.pick-type').hide();
+      $('.questions-container').show();
+      $('.results-container').hide();
     })
   }) // fin función START
 
@@ -99,7 +133,15 @@
           console.log('fin!');
           //mostrar resultados *******
           $('#answers-container').empty();
-          $('#answers-container').append(`<li id="results"> You got ${correct}/${correct + wrong}</li>`)
+          $('#question').empty();
+          $('.questions-container').hide();
+          $('.start-category').hide();
+          $('.pick-category').hide();
+          $('.pick-difficulty').hide();
+          $('.pick-type').hide();
+          $('.results-container').show();
+
+          $('#results').html(`You got ${correct}/${correct + wrong}</li>`)
         } else {
           questionToDOM(gameInfo[actualID]);
         }
@@ -132,6 +174,7 @@
           wrong = wrong + 1;
         }
         $('#answers-container li').removeClass('clickeable');
+        $('#btn-container button').removeAttr('disabled');
       })
     })
   }
@@ -140,6 +183,7 @@
   * insertando en DOM una pregunta
   */
   const questionToDOM = function(questionElement) {
+    $('#btn-container button').attr('disabled', 'disabled');
     let id = $('#btn-container button').attr('id');
     console.log(id)
     $('#question').removeAttr('class');
@@ -165,6 +209,11 @@
         $('#answers-container').append(`<li class="clickeable">${element}</li>`);
       })
     } else {
+      $('#question').html(question);
+      answers.forEach(function(element) {
+        console.log(element);
+        $('#answers-container').append(`<li class="clickeable">${element}</li>`);
+      })
       console.log('es true false')
     }
   }
